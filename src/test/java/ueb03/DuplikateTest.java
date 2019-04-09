@@ -10,7 +10,7 @@ class DuplikateTest {
 	void testFindeDuplikate() {
 		String t1 = "In Ulm! und um Ulm! und um Ulm herum!";
 
-		Set s1 = findeDuplikate(t1);
+		Set<String> s1 = findeDuplikate(t1);
 
 		assertEquals(3, s1.size());  // Ulm und um
 		assertTrue(s1.contains("Ulm"));
@@ -21,12 +21,12 @@ class DuplikateTest {
 		assertFalse(s1.contains("Ulm!"));  // keine Satzzeichen!
 
 		String t2 = "Ein armer Affe";
-		Set s2 = findeDuplikate(t2);
+		Set<String> s2 = findeDuplikate(t2);
 
 		assertEquals(0, s2.size());
 
 		String t3 = "Wenn Fliegen hinter Fliegen fliegen?";
-		Set s3 = findeDuplikate(t3);
+		Set<String> s3 = findeDuplikate(t3);
 
 		assertEquals(1, s3.size());
 		assertTrue(s3.contains("Fliegen"));

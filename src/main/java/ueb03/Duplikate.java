@@ -7,7 +7,7 @@ class Duplikate {
 	 * @param text Eingabetext, kann Satzzeichen enthalten welche ignoriert werden.
 	 * @return Set mit den Wörtern, welche mind. zwei mal vorkommen.
 	 */
-	static Set findeDuplikate(String text) {
+	static Set<String> findeDuplikate(String text) {
 		// nur Zeichen und Leerzeichen zulassen
 		StringBuilder sb = new StringBuilder();
 		for (char c : text.toCharArray()) {
@@ -16,8 +16,8 @@ class Duplikate {
 		}
 		text = sb.toString();
 
-		Set s1 = new SetImpl();
-		Set s2 = new SetImpl();
+		Set<String> s1 = new SetImpl();
+		Set<String> s2 = new SetImpl();
 
 		for (String w : text.split(" ")) {
 			// kennt das erste Set das Wort bereits, so tritt es zum 2. mal auf!

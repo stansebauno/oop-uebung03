@@ -2,6 +2,7 @@ package ueb03;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Comparator;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,11 +10,18 @@ import static org.junit.jupiter.api.Assertions.*;
 class SetTest {
 	@Test
 	void testStringSet() {
+
+		Comparator<String> c = new Comparator<String>() {
+			@Override
+			public int compare(String o1, String o2) {
+				return o1.compareTo(o2);
+			}
+		};
 		Set impl = new SetImpl();
 		String str = "In Ulm und um Ulm und um Ulm herum";
 
-		for (String c : str.split(" ")) {
-			impl.add(c);
+		for (String d : str.split(" ")) {
+			impl.add(d);
 		}
 
 		System.out.println(impl);

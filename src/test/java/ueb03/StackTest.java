@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class StackTest {
+public class StackTest<T> {
 	@Test
 	void testStack() {
 		Stack cs = new StackImpl();
@@ -19,7 +19,7 @@ public class StackTest {
 		assertThrows(NoSuchElementException.class, cs::pop);
 
 		// jetzt ein paar Werte pushen
-		char[] a = {'a', 'b', 'c'};
+		char[] a = {'a','b', 'c'};
 		for (char c : a)
 			cs.push(c);
 		// ...Groesse checken
